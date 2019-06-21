@@ -1,6 +1,6 @@
-#LoLMatchDataGrabber 
+# LoLMatchDataGrabber 
 
 Contributors: Zachary "Kizuku" Zhao
 
-Purpose: Pull match data from Riot Games API to make data grabbing more efficient for analysts.
+App to pull match data from Riot Games API to make data grabbing more efficient for analysts.
 
