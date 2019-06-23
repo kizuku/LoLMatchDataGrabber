@@ -1,3 +1,32 @@
 /* Stylesheet.css - Main css file for LoLMatchDataGrabber */
 
+html {
+    margin-left: 10px;
+}
+
+header {
+    padding: 0;
+}
+
+header h1 { 
+    margin: 0;
+    border-bottom: 5px solid black;
+    font-family: "Chathura";
+    font-size: 48px;
+}
+
+#params p{
+    margin-top: 20px;
+    font-size: 16px;
+    font-family: "Raleway";
+}
+
+#params input {
+    width: 65%;
+}
+
+thead th{
+    text-align: center;
+}
+
 
