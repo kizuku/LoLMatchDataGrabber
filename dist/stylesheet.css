@@ -21,8 +21,16 @@ header h1 {
     font-family: "Raleway";
 }
 
-#params input {
+#params #link {
     width: 65%;
+}
+
+#params input#radio {
+    margin-left: 10px;
+}
+
+#params input {
+    margin-left: 10px;
 }
 
 thead th{

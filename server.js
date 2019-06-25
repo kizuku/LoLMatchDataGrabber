@@ -15,9 +15,7 @@ app.use(serveStatic(__dirname + "/dist"));
 axios.defaults.headers.common["X-Riot-Token"] = apiKey;
 
 app.get('/api', function(req, res) {
-    matchid = req.headers.matchid;
-
-    console.log(req.headers);
+    var matchid = req.headers.matchid;
 
     axios.get(apiUrl + matchid).then(result => {
         object = result;

@@ -20,17 +20,26 @@
 		<div id = "app">
 			<div id = "params">
 				<p>
-					Copy and paste match link here: <input id = "link" type = "text" />
-
-					<button v-on:click = "pullData">Pull Data</button>
+					Paste match link here: <input id = "link" type = "text" />
 				</p>
+				<p>
+					Select which team to pull stats for:
+				
+				
+					<input type = "radio" name = "team" value = "blue" id = "radio">
+					<label for = "blue">Blue</label>
+			
+					<input type = "radio" name = "team" value = "red">
+					<label for = "red">Red</label>
+				</p>
+				<button v-on:click = "pullData">Pull Data</button>
 			</div>
 			<table class = "table table-bordered" v-show = "visible">
 				<thead>
 					<tr>
 						<th></th>
-						<th v-for = "role in roles">
-							{{ role }}
+						<th v-for = "champion in champions">
+							{{ champion }}
 						</th>
 					</tr>
 				</thead>
@@ -40,11 +49,15 @@
 		</div>
 
 		<div id = "footer">
-			<h4>Developed for general use by Kizuku.</h4> 
+			<h4>
+				Developed for general use by Kizuku.
+				Table generation may not work properly for unbalanced team sizes.
+			</h4> 
 		</div>
 
-		<script src="https://unpkg.com/vue"></script>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src = "https://unpkg.com/vue"></script>
+		<script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src = "external.js"></script>
 		<script src = "main.js"></script>
 
 	</body>
