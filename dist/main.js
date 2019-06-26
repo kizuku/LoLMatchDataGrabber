@@ -43,7 +43,7 @@ const vm = new Vue({
         
             axios.get('/api', { headers: { matchid: this.matchid }}).then(result => {
                 var data = result.data;
-                //console.log(data);
+                // console.log(data);
                 
                 // get data for relevant players
                 for (var i = 0; i < data.participantIdentities.length; i++) {
@@ -51,15 +51,16 @@ const vm = new Vue({
                         this.players.push(data.participants[i])
                 }
 
-                //console.log(this.players)
-
                 for (var i = 0; i < this.players.length; i++) {
                     this.champIDs.push(this.players[i].championId);
                 }
-                console.log(this.champIDs);
+                // console.log(this.champIDs);
 
-                // console.log(champNameFromID(this.champIDs)); // concept works
+                this.champions = champNameFromID(this.champIDs);
 
+                console.log(this.players);
+                this.stats = grabStats(this.players);
+                // console.log(this.stats);
             })
         }
     }

@@ -33,7 +33,11 @@ header h1 {
     margin-left: 10px;
 }
 
-thead th{
+table {
+    text-align: center;
+}
+
+thead th {
     text-align: center;
 }
 

@@ -35,7 +35,7 @@
 				<button v-on:click = "pullData">Pull Data</button>
 			</div>
 			<table class = "table table-bordered" v-show = "visible">
-				<thead>
+				<thead>      <!-- Champion names -->
 					<tr>
 						<th></th>
 						<th v-for = "champion in champions">
@@ -43,7 +43,31 @@
 						</th>
 					</tr>
 				</thead>
-				<tbody>
+				<tbody>     <!-- Relevant stats -->
+					<tr>
+						<td>Kills</td>
+						<td v-for = "kills in stats[0]">
+							{{ kills }}
+						</td>
+					</tr>
+					<tr>
+						<td>Deaths</td>
+						<td v-for = "deaths in stats[1]">
+							{{ deaths }}
+						</td>
+					</tr>
+					<tr>
+						<td>Assists</td>
+						<td v-for = "assists in stats[2]">
+							{{ assists }}
+						</td>
+					</tr>
+					<tr>
+						<td>KDA</td>
+						<td v-for = "kda in stats[3]">
+							{{ kda }}
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
