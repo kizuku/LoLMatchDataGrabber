@@ -59,7 +59,8 @@ const vm = new Vue({
                 this.champions = champNameFromID(this.champIDs);
 
                 console.log(this.players);
-                this.stats = grabStats(this.players);
+                this.stats = grabStats(this.players, data.gameDuration);
+
                 // console.log(this.stats);
             })
         }

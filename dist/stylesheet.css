@@ -33,6 +33,10 @@ header h1 {
     margin-left: 10px;
 }
 
+#params button {
+    margin-bottom: 10px;
+}
+
 table {
     text-align: center;
 }
@@ -40,5 +44,3 @@ table {
 thead th {
     text-align: center;
 }
-
-

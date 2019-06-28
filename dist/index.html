@@ -25,7 +25,6 @@
 				<p>
 					Select which team to pull stats for:
 				
-				
 					<input type = "radio" name = "team" value = "blue" id = "radio">
 					<label for = "blue">Blue</label>
 			
@@ -37,13 +36,13 @@
 			<table class = "table table-bordered" v-show = "visible">
 				<thead>      <!-- Champion names -->
 					<tr>
-						<th></th>
+						<th>Stat</th>
 						<th v-for = "champion in champions">
 							{{ champion }}
 						</th>
 					</tr>
 				</thead>
-				<tbody>     <!-- Relevant stats -->
+				<tbody>      <!-- Relevant stats -->
 					<tr>
 						<td>Kills</td>
 						<td v-for = "kills in stats[0]">
@@ -68,6 +67,78 @@
 							{{ kda }}
 						</td>
 					</tr>
+					<tr>
+						<td>KP</td>
+						<td v-for = "kp in stats[4]">
+							{{ kp }}
+						</td>
+					</tr>
+					<tr>
+						<td>Death%</td>
+						<td v-for = "dp in stats[5]">
+							{{ dp }}
+						</td>
+					</tr>
+					<tr>
+						<td>CS@10</td>
+						<td v-for = "cs in stats[6]">
+							{{ cs }}
+						</td>
+					</tr>
+					<tr>
+						<td>CS PM</td>
+						<td v-for = "cspm in stats[7]">
+							{{ cspm }}
+						</td>
+					</tr>
+					<tr>
+						<td>DMG PM</td>
+						<td v-for = "dpm in stats[8]">
+							{{ dpm }}
+						</td>
+					</tr>
+					<tr>
+						<td>DMG%</td>
+						<td v-for = "dmgPercent in stats[9]">
+							{{ dmgPercent }}
+						</td>
+					</tr>
+					<tr>
+						<td>Gold</td>
+						<td v-for = "gold in stats[10]">
+							{{ gold }}
+						</td>
+					</tr>
+					<tr>
+						<td>GPM</td>
+						<td v-for = "gpm in stats[11]">
+							{{ gpm }}
+						</td>
+					</tr>
+					<tr>
+						<td>Wards Placed</td>
+						<td v-for = "wardsPlaced in stats[12]">
+							{{ wardsPlaced }}
+						</td>
+					</tr>
+					<tr>
+						<td>Wards Cleared</td>
+						<td v-for = "wardsCleared in stats[13]">
+							{{ wardsCleared }}
+						</td>
+					</tr>
+					<tr>
+						<td>WPM</td>
+						<td v-for = "wpm in stats[14]">
+							{{ wpm }}
+						</td>
+					</tr>
+					<tr>
+						<td>WCPM</td>
+						<td v-for = "wcpm in stats[15]">
+							{{ wcpm }}
+						</td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -75,7 +146,6 @@
 		<div id = "footer">
 			<h4>
 				Developed for general use by Kizuku.
-				Table generation may not work properly for unbalanced team sizes.
 			</h4> 
 		</div>
 
