@@ -1,5 +1,6 @@
 // champIDtoName.js - holds champIDtoName function
 // NOTE: must update for each new champion release
+// latest champion in switch: qiyana
 
 function champIDtoName(idArray) {
     var champNames = [];
@@ -93,6 +94,7 @@ function champIDtoName(idArray) {
             case 80:     champ = "Pantheon"; break;
             case 78:     champ = "Poppy"; break;
             case 555:    champ = "Pyke"; break;
+            case 246:    champ = "Qiyana"; break;
             case 133:    champ = "Quinn"; break;
             case 497:    champ = "Rakan"; break;
             case 33:     champ = "Rammus"; break;
