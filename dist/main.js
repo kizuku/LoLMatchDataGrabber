@@ -1,4 +1,4 @@
-// Main JS file for LoLMatchDataGrabber
+// main.js - Main JS file for LoLMatchDataGrabber
 
 const vm = new Vue({
     el: '#app',
@@ -43,7 +43,6 @@ const vm = new Vue({
         
             axios.get('/api', { headers: { matchid: this.matchid }}).then(result => {
                 var data = result.data;
-                // console.log(data);
                 
                 // get data for relevant players
                 for (var i = 0; i < data.participantIdentities.length; i++) {
@@ -59,6 +58,40 @@ const vm = new Vue({
 
                 this.stats = grabStats(this.players, data.gameDuration);
             })
+        },
+        exportCSV() {
+            var table = document.getElementById("table");
+            var numRows = table.rows.length;
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            let categories = [];
+
+            for (var i = 0; i < numRows; i++) {
+                var cells = table.rows.item(i).cells;
+
+                categories.push(cells.item(0).innerHTML);
+            }
+
+            for (var i = 0; i < categories.length; i++) {
+                csvContent += categories[i];
+                if (i == 0) {
+                    for (var j = 0; j < this.champions.length; j++) {
+                        csvContent += "," + this.champions[j];
+                    }
+                }
+                else {
+                    for (var k = 0; k < this.champions.length; k++) {
+                        csvContent += "," + this.stats[i - 1][k];
+                    }
+                }
+                csvContent += "\n";
+            }
+
+            const data = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", data);
+            link.setAttribute("download", "table.csv");
+            link.click();
         }
     }
 });

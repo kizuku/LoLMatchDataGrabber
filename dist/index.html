@@ -7,7 +7,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Chathura' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 		
-		
+
 
 		<link rel = "stylesheet" type = "text/css" href = "stylesheet.css">	
 		<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
@@ -35,7 +35,7 @@
 				</p>
 				<button v-on:click = "pullData">Pull Data</button>
 			</div>
-			<table class = "table table-bordered" v-show = "visible">
+			<table id = "table" class = "table table-bordered" v-show = "visible">
 				<thead>      <!-- Champion names -->
 					<tr>
 						<th>Stat</th>
@@ -143,9 +143,13 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div id = "csv">
-			
+			<div id = "csv">
+					<p>
+						Click to export table to csv file
+						
+						<button v-on:click = "exportCSV">Export</button>
+					</p>
+				</div>
 		</div>
 
 		<div id = "footer">

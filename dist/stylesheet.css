@@ -44,3 +44,7 @@ table {
 thead th {
     text-align: center;
 }
+
+#csv button {
+    margin-left: 5px;
+}
