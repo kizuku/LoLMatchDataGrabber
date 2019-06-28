@@ -54,14 +54,10 @@ const vm = new Vue({
                 for (var i = 0; i < this.players.length; i++) {
                     this.champIDs.push(this.players[i].championId);
                 }
-                // console.log(this.champIDs);
 
-                this.champions = champNameFromID(this.champIDs);
+                this.champions = champIDtoName(this.champIDs);
 
-                console.log(this.players);
                 this.stats = grabStats(this.players, data.gameDuration);
-
-                // console.log(this.stats);
             })
         }
     }

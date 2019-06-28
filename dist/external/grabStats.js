@@ -1,22 +1,4 @@
-// External.js - holds external functions
-
-function champNameFromID(idArray) {
-    var champNames = [];
-    var champ;
-
-    for (var i = 0; i < idArray.length; i++) {
-        switch(idArray[i]) {
-            case 157: champ = "Yasuo"; break; 
-            case 18: champ = "Tristana"; break;
-            case 45: champ = "Veigar"; break;
-            case 350: champ = "Yuumi"; break;
-            case 110: champ = "Varus"; break;
-        }
-        champNames.push(champ);
-    }
-
-    return champNames;
-}
+// grabStats.js - holds function to pull stats from results object
 
 function grabStats(playerArray, gameDuration) {
     var stats = [];
