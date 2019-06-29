@@ -4,7 +4,7 @@ var dotenv = require("dotenv").config();
 var express = require("express");
 var serveStatic = require("serve-static");
 const axios = require("axios");
-var port = process.env.port || 5000;
+var port = process.env.PORT || 5000;
 
 const apiUrl = process.env.apiUrl;
 const apiKey = process.env.apiKey;
