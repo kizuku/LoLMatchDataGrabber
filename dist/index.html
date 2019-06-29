@@ -81,6 +81,7 @@
 							{{ dp }}
 						</td>
 					</tr>
+					<!--
 					<tr>
 						<td>CS@10</td>
 						<td v-for = "cs in stats[6]">
@@ -93,6 +94,7 @@
 							{{ cspm }}
 						</td>
 					</tr>
+					-->
 					<tr>
 						<td>DMG PM</td>
 						<td v-for = "dpm in stats[8]">
@@ -146,7 +148,7 @@
 			<div id = "csv">
 					<p>
 						Click to export table to csv file
-						
+
 						<button v-on:click = "exportCSV">Export</button>
 					</p>
 				</div>

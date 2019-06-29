@@ -30,7 +30,12 @@ function grabStats(playerArray, gameDuration) {
         kills.push(playerArray[i].stats.kills);
         deaths.push(playerArray[i].stats.deaths);
         assists.push(playerArray[i].stats.assists);
-        var tempKDA = ((playerArray[i].stats.kills + playerArray[i].stats.assists) / playerArray[i].stats.deaths).toFixed(2);
+        
+        var tempKDA = 0;
+        if (playerArray[i].stats.deaths != 0)
+            tempKDA = ((playerArray[i].stats.kills + playerArray[i].stats.assists) / playerArray[i].stats.deaths).toFixed(2);
+        else
+            tempKDA = (playerArray[i].stats.kills + playerArray[i].stats.assists).toFixed(2);
         kda.push(tempKDA);
 
         // cover cs at 15 
@@ -42,9 +47,11 @@ function grabStats(playerArray, gameDuration) {
     }
 
     for (var i = 0; i < playerArray.length; i++) {
-        killPercent.push(((kills[i]/totKills) * 100).toFixed(2));
-        deathPercent.push(((deaths[i]/totDeaths) * 100).toFixed(2));
+        killPercent.push((kills[i]/totKills).toFixed(2));
+        deathPercent.push((deaths[i]/totDeaths).toFixed(2));
 
+
+        // fix cs metrics
         var tempCSat10 = parseInt((playerArray[i].timeline.creepsPerMinDeltas["0-10"] * 10).toFixed(0)); 
         csAt10.push(tempCSat10);
         
@@ -53,13 +60,13 @@ function grabStats(playerArray, gameDuration) {
 
         var tempDPM = (((playerArray[i].stats.totalDamageDealtToChampions * 60) / gameDuration)).toFixed(2); 
         dpm.push(tempDPM);
-        var tempDMG = ((playerArray[i].stats.totalDamageDealtToChampions / totDmg) * 100).toFixed(2);
+        var tempDMG = (playerArray[i].stats.totalDamageDealtToChampions / totDmg).toFixed(2);
         dmgPercent.push(tempDMG);
 
         gold.push(playerArray[i].stats.goldEarned);    
         var tempGPM = ((playerArray[i].stats.goldEarned * 60) / gameDuration).toFixed(2);
         gpm.push(tempGPM);
-        goldShare.push(((playerArray[i].stats.goldEarned / totGold) * 100).toFixed(2))
+        goldShare.push((playerArray[i].stats.goldEarned / totGold).toFixed(2))
 
         wardsPlaced.push(playerArray[i].stats.wardsPlaced);
         wardsCleared.push(playerArray[i].stats.wardsKilled);
