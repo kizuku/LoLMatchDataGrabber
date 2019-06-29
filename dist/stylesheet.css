@@ -2,6 +2,7 @@
 
 html {
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 header {
@@ -42,6 +43,10 @@ table {
 }
 
 thead th {
+    text-align: center;
+}
+
+tbody td {
     text-align: center;
 }
 

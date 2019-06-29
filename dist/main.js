@@ -6,7 +6,9 @@ const vm = new Vue({
         champions: [],
         champIDs: [],
         players: [],
+        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "CS@10", "CS PM", "DMG PM", "DMG %", "Gold", "GPM", "Wards Placed", "Wards Cleared", "WPM", "WCPM"],
         stats: [],
+        rows: [],
         visible: false,
         link: '',
         matchid: '',
@@ -57,35 +59,36 @@ const vm = new Vue({
                 this.champions = champIDtoName(this.champIDs);
 
                 this.stats = grabStats(this.players, data.gameDuration);
+
+                for (var i = 0; i < this.champions.length; i++) {
+                    var tempArr = [];
+                    tempArr.push(this.champions[i])
+                    for (var j = 0; j < this.stats.length; j++) {
+                        tempArr.push(this.stats[j][i]);
+                    }
+                    this.rows.push(tempArr);
+                }
             })
+
         },
         exportCSV() {
-            var table = document.getElementById("table");
-            var numRows = table.rows.length;
-
             let csvContent = "data:text/csv;charset=utf-8,";
-            let categories = [];
 
-            for (var i = 0; i < numRows; i++) {
-                var cells = table.rows.item(i).cells;
-
-                categories.push(cells.item(0).innerHTML);
+            csvContent += this.categories[0];
+            for (var i = 1; i < this.categories.length; i++) {
+                csvContent += ";" + this.categories[i];
             }
+            csvContent += "\n";
 
-            for (var i = 0; i < categories.length; i++) {
-                csvContent += categories[i];
-                if (i == 0) {
-                    for (var j = 0; j < this.champions.length; j++) {
-                        csvContent += "," + this.champions[j];
-                    }
-                }
-                else {
-                    for (var k = 0; k < this.champions.length; k++) {
-                        csvContent += "," + this.stats[i - 1][k];
-                    }
+            for (var i = 0; i < this.rows.length; i++) {
+                csvContent += this.rows[i][0];
+                for (var j = 1; j < this.categories.length; j++) {
+                    csvContent += "," + this.rows[i][j];
                 }
                 csvContent += "\n";
             }
+
+            console.log(csvContent);
 
             const data = encodeURI(csvContent);
             const link = document.createElement("a");

@@ -35,113 +35,19 @@
 				</p>
 				<button v-on:click = "pullData">Pull Data</button>
 			</div>
-			<table id = "table" class = "table table-bordered" v-show = "visible">
-				<thead>      <!-- Champion names -->
+			<table class = "table table-bordered" v-show = "visible">
+				<thead>
 					<tr>
-						<th>Stat</th>
-						<th v-for = "champion in champions">
-							{{ champion }}
+						<th v-for = "category in categories">
+							{{ category }}
 						</th>
 					</tr>
 				</thead>
-				<tbody>      <!-- Relevant stats -->
-					<tr>
-						<td>Kills</td>
-						<td v-for = "kills in stats[0]">
-							{{ kills }}
-						</td>
-					</tr>
-					<tr>
-						<td>Deaths</td>
-						<td v-for = "deaths in stats[1]">
-							{{ deaths }}
-						</td>
-					</tr>
-					<tr>
-						<td>Assists</td>
-						<td v-for = "assists in stats[2]">
-							{{ assists }}
-						</td>
-					</tr>
-					<tr>
-						<td>KDA</td>
-						<td v-for = "kda in stats[3]">
-							{{ kda }}
-						</td>
-					</tr>
-					<tr>
-						<td>KP</td>
-						<td v-for = "kp in stats[4]">
-							{{ kp }}
-						</td>
-					</tr>
-					<tr>
-						<td>Death%</td>
-						<td v-for = "dp in stats[5]">
-							{{ dp }}
-						</td>
-					</tr>
-					<!--
-					<tr>
-						<td>CS@10</td>
-						<td v-for = "cs in stats[6]">
-							{{ cs }}
-						</td>
-					</tr>
-					<tr>
-						<td>CS PM</td>
-						<td v-for = "cspm in stats[7]">
-							{{ cspm }}
-						</td>
-					</tr>
-					-->
-					<tr>
-						<td>DMG PM</td>
-						<td v-for = "dpm in stats[8]">
-							{{ dpm }}
-						</td>
-					</tr>
-					<tr>
-						<td>DMG%</td>
-						<td v-for = "dmgPercent in stats[9]">
-							{{ dmgPercent }}
-						</td>
-					</tr>
-					<tr>
-						<td>Gold</td>
-						<td v-for = "gold in stats[10]">
-							{{ gold }}
-						</td>
-					</tr>
-					<tr>
-						<td>GPM</td>
-						<td v-for = "gpm in stats[11]">
-							{{ gpm }}
-						</td>
-					</tr>
-					<tr>
-						<td>Wards Placed</td>
-						<td v-for = "wardsPlaced in stats[12]">
-							{{ wardsPlaced }}
-						</td>
-					</tr>
-					<tr>
-						<td>Wards Cleared</td>
-						<td v-for = "wardsCleared in stats[13]">
-							{{ wardsCleared }}
-						</td>
-					</tr>
-					<tr>
-						<td>WPM</td>
-						<td v-for = "wpm in stats[14]">
-							{{ wpm }}
-						</td>
-					</tr>
-					<tr>
-						<td>WCPM</td>
-						<td v-for = "wcpm in stats[15]">
-							{{ wcpm }}
-						</td>
+				<tbody>
+					<tr v-for = "row in rows">
+						<th v-for = "item in row" style = "text-align:center;">
+							{{ item }}
+						</th>
 					</tr>
 				</tbody>
 			</table>
