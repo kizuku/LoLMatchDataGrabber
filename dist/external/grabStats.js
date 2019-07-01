@@ -8,9 +8,9 @@ function grabStats(playerArray, gameDuration) {
     var kda = [];
     var killPercent = [];
     var deathPercent = [];
-    var csAt10 = [];
+    //var csAt10 = [];
     // want to somehow cover csAt15
-    var cspm = [];
+    //var cspm = [];
     var dpm = [];
     var dmgPercent = [];
     var gold = [];
@@ -52,11 +52,13 @@ function grabStats(playerArray, gameDuration) {
 
 
         // fix cs metrics
+        /*
         var tempCSat10 = parseInt((playerArray[i].timeline.creepsPerMinDeltas["0-10"] * 10).toFixed(0)); 
         csAt10.push(tempCSat10);
         
         var tempCSpm = (((playerArray[i].stats.totalMinionsKilled * 60)/ gameDuration)).toFixed(2) 
         cspm.push(tempCSpm);
+        */
 
         var tempDPM = (((playerArray[i].stats.totalDamageDealtToChampions * 60) / gameDuration)).toFixed(2); 
         dpm.push(tempDPM);
@@ -80,9 +82,9 @@ function grabStats(playerArray, gameDuration) {
     stats.push(kda);
     stats.push(killPercent);
     stats.push(deathPercent);
-    stats.push(csAt10);
+    //stats.push(csAt10);
 
-    stats.push(cspm);
+    //stats.push(cspm);
     stats.push(dpm);
     stats.push(dmgPercent);
     stats.push(gold);

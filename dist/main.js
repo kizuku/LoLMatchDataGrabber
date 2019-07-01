@@ -6,7 +6,7 @@ const vm = new Vue({
         champions: [],
         champIDs: [],
         players: [],
-        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "CS@10", "CS PM", "DMG PM", "DMG %", "Gold", "GPM", "Wards Placed", "Wards Cleared", "WPM", "WCPM"],
+        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "DMG PM", "DMG %", "Gold", "GPM", "Wards Placed", "Wards Cleared", "WPM", "WCPM"],
         stats: [],
         rows: [],
         visible: false,
