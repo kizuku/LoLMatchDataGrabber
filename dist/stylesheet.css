@@ -50,6 +50,10 @@ tbody td {
     text-align: center;
 }
 
+#app table th {
+    font-weight: 400;
+}
+
 #csv button {
     margin-left: 5px;
 }

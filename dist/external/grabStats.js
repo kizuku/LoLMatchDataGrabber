@@ -70,10 +70,12 @@ function grabStats(playerArray, gameDuration) {
         gpm.push(tempGPM);
         goldShare.push((playerArray[i].stats.goldEarned / totGold).toFixed(2))
 
+        /*             ward information not present in the API anymore???? 
         wardsPlaced.push(playerArray[i].stats.wardsPlaced);
         wardsCleared.push(playerArray[i].stats.wardsKilled);
         wpm.push(((playerArray[i].stats.wardsPlaced * 60) / gameDuration).toFixed(2));
         wcpm.push(((playerArray[i].stats.wardsKilled * 60) / gameDuration).toFixed(2));
+        */
     }
 
     stats.push(kills);
@@ -89,10 +91,12 @@ function grabStats(playerArray, gameDuration) {
     stats.push(dmgPercent);
     stats.push(gold);
     stats.push(gpm);
+    /*
     stats.push(wardsPlaced);
     stats.push(wardsCleared);
     stats.push(wpm);
     stats.push(wcpm);
+    */
 
     return stats;
 }

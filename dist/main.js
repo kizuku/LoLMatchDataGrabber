@@ -6,7 +6,7 @@ const vm = new Vue({
         champions: [],
         champIDs: [],
         players: [],
-        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "DMG PM", "DMG %", "Gold", "GPM", "Wards Placed", "Wards Cleared", "WPM", "WCPM"],
+        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "DMG PM", "DMG %", "Gold", "GPM"],
         stats: [],
         rows: [],
         visible: false,
@@ -66,6 +66,7 @@ const vm = new Vue({
                     for (var j = 0; j < this.stats.length; j++) {
                         tempArr.push(this.stats[j][i]);
                     }
+                    console.log(tempArr);
                     this.rows.push(tempArr);
                 }
             })
