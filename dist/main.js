@@ -6,7 +6,7 @@ const vm = new Vue({
         champions: [],
         champIDs: [],
         players: [],
-        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "DMG PM", "DMG %", "Gold", "GPM"],
+        categories: ["Champion", "Kills", "Deaths", "Assists", "KDA", "KP", "Death %", "DMG PM", "DMG %", "Gold", "GPM", "Gold Share %", "Wards Plc", "Wards Clr", "Wards PPM", "Wards CPM"],
         stats: [],
         rows: [],
         visible: false,
@@ -45,7 +45,8 @@ const vm = new Vue({
         
             axios.get('/api', { headers: { matchid: this.matchid }}).then(result => {
                 var data = result.data;
-                
+                console.log(data);
+
                 // get data for relevant players
                 for (var i = 0; i < data.participantIdentities.length; i++) {
                     if (data.participants[i].teamId == this.team)
