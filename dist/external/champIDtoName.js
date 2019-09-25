@@ -87,7 +87,7 @@ function champIDtoName(idArray) {
             case 111:    champ = "Nautilus"; break;
             case 518:    champ = "Neeko"; break;
             case 76:     champ = "Nidalee"; break;
-            case 56:     champ = "Nunu & Willump"; break;
+            case 20:     champ = "Nunu & Willump"; break;
             case 2:      champ = "Olaf"; break;
             case 61:     champ = "Orianna"; break;
             case 516:    champ = "Ornn"; break;
